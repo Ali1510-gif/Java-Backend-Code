@@ -1,1 +1,34 @@
 
+
+it is main code  means .java file
+
+import java.io.*;
+import javax.servlet.*;
+public class MyFirstServlet extends GenericServlet
+{
+  public void service(ServletRequest req,ServletResponse resp)throws ServletException,IOException
+{
+  resp.setContentType("text/html");
+  PrintWriter pw=resp.getWriter();
+  pw.println("<html>");
+  pw.println("<head><title>My First Servlet</title></head>");
+  pw.println("<body>");
+  pw.println("<h2>Welcome To Java Backend!</h2>");
+  pw.println("</body>");
+  pw.println("</html>");
+  pw.close();
+ }
+}
+
+ it is the .xml code 
+<web-app>
+  <servlet>
+<servlet-class>MyFirstServlet</servlet-class>
+<servlet-name>MyFirstServlet</servlet-name>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>MyFirstServlet</servlet-name>
+<url-pattern>/MyFirstServlet</url-pattern>
+</servlet-mapping>
+</web-app>
